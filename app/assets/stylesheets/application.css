@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.delete-link {
+    text-decoration: none;
+    color: white;
+    
+}
+
+.delete-link:hover{
+    color: white;
+}

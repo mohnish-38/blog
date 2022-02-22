@@ -1,9 +1,9 @@
-<h1>Article listing page</h1>
-<table>
+
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>description</th>
+      <th>Description</th>
       <th colspan="3">Actions</th>
     </tr>
   </thead>
@@ -12,16 +12,18 @@
       <tr>
         <td><%=article.title%></td>
         <td><%=article.description%></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Delete', article_path(article) , data: {
+        <td><a  href="<%= article_path(article) %>"><button type="button" class="btn btn-success btn-sm">Show</button></a></td>
+        <td><a  href="<%= edit_article_path(article) %>"><button type="button" class="btn btn-warning btn-sm">Edit</button></a></td>
+        <td ><p type="button" class="btn btn-danger btn-sm"><%= link_to 'Delete', article_path(article) , data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"}%></td>
+        turbo_confirm: "Are you sure?"} ,class: "delete-link"  %></p></td>
       </tr>
     <% end %>
 
   </tbody>
 </table>
 
-<p><%=link_to "Create new Article" ,new_article_path %></p>
+
+<a class="navbar-brand" href="<%= new_article_path %>"><button type="button" class="btn btn-outline-primary">New Article</button></a>
+
 

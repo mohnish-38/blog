@@ -1,8 +1,24 @@
-<h1>Showing Article</h1>
-<Strong>Title: </Strong><%= @article.title%> <br>
-<Strong>Description: </Strong><%= @article.description%> <br> <br>
-
-<%= link_to "Return to Articles",articles_path %> |
-<%= link_to "Edit",edit_article_path %> |
-<%= link_to "Delete",article_path ,data:{turbo_method: :delete,
-        turbo_confirm: "Are you sure?"} %>
+<h3 class="text-center mt-2">Showing Article</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
+          by mohnish
+        </div>
+        <div class="card-body">
+          <h5 class="card-title text-success"><%= @article.title %></h5>
+          <p class="card-text"><%= @article.description %></p>
+          <a  href="<%= articles_path(@article) %>"><button type="button" class="btn btn-primary btn-sm">Back</button></a>
+          <a  href="<%= edit_article_path(@article) %>"><button type="button" class="btn btn-success btn-sm">Edit</button></a>
+          <%=link_to "Delete", article_path(@article), class:"btn btn-danger btn-sm", data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"}%>
+        </div>
+        <div class="card-footer text-muted">
+          <small>Created <%= time_ago_in_words(@article.created_at) %> ago, 
+            edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
+        </div>
+      </div>
+    </div>
+  </div>

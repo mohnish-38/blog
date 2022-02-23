@@ -14,9 +14,10 @@
         <td><%=article.description%></td>
         <td><a  href="<%= article_path(article) %>"><button type="button" class="btn btn-success btn-sm">Show</button></a></td>
         <td><a  href="<%= edit_article_path(article) %>"><button type="button" class="btn btn-warning btn-sm">Edit</button></a></td>
-        <td ><p type="button" class="btn btn-danger btn-sm"><%= link_to 'Delete', article_path(article) , data: {
+        <td><%=link_to "Delete", article_path(article), class:"btn btn-danger btn-sm", data: {
         turbo_method: :delete,
-        turbo_confirm: "Are you sure?"} ,class: "delete-link"  %></p></td>
+        turbo_confirm: "Are you sure?"}%><td>
+       
       </tr>
     <% end %>
 

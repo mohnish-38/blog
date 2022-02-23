@@ -13,12 +13,18 @@
  *= require_tree .
  *= require_self
  */
-.delete-link {
-    text-decoration: none;
-    color: white;
+.page {
+    background-color: rgb(218, 234, 240);
+}
+.bgc{
+    background-color: rgba(111, 173, 184, 0.589);
+}
+.img {
+    background-image: asset-url('watermark-background.ccf713b.png');
     
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 425px;
 }
 
-.delete-link:hover{
-    color: white;
-}

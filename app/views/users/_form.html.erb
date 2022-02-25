@@ -24,7 +24,7 @@
           </div>
         </div>
         <br>
-        <p class="text-center mt-1"><%= f.submit "Sign up", class:"btn btn-outline-light " %></p>
+        <p class="text-center mt-1"><%= f.submit(@user.new_record? ? "Sign up" : "Update account" , class:"btn btn-outline-light ") %></p>
       <% end %>
     </div>
     <p class="text-center "><%= link_to "[ Return to articles ]" , articles_path,class:"text-info"%></p>

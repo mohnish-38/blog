@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user , only: [:edit, :update]
+    before_action :set_user , only: [:edit, :update, :show]
     def new
         @user =User.new
     end
@@ -20,11 +20,20 @@ class UsersController < ApplicationController
 
     def update
       if @user.update(user_params)
-        redirect_to articles_path
+        redirect_to users_path
       else
         render :edit,  status: :unprocessable_entity
       end
     end
+
+    def index
+        @users = User.all
+    end
+
+    def show
+        @articles = @user.articles
+    end
+
     
     private
 

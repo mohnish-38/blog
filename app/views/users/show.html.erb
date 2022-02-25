@@ -1,0 +1,26 @@
+<h3 class="text-center mt-2"><%= @user.username%>'s profile</h1>
+<%= gravatar_for @user %>
+<div class="container ">
+  <div class="row justify-content-center ">
+    <div class="row justify-content-md-center">
+    
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title text-success"><%= @user.username %></h5>
+            <p class="card-text"><%= @user.email %></p>
+            <a  href="<%= users_path(@user) %>"><button type="button" class="btn btn-primary btn-sm">Back</button></a>
+            <a  href="<%= edit_user_path(@user) %>"><button type="button" class="btn btn-primary btn-sm">Edit</button></a>
+            
+            
+          </div>
+          <div class="card-footer text-muted">
+            <small>Created <%= time_ago_in_words(@user.created_at) %> ago, 
+              edited <%= time_ago_in_words(@user.updated_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= render 'listing'%>

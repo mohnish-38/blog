@@ -1,0 +1,26 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      
+      <th >Actions </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user|%>
+      <tr>
+        <td><%=user.username%></td>
+        <td><%=user.email%></td>
+        <td><a  href="<%= user_path(user) %>"><button type="button" class="btn btn-success btn-sm">Show</button></a></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+
+
+
+
